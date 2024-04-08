@@ -7,6 +7,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-2UgeGyA7KDcRBRL1Nk+nbfPb+xJv1iQQjdd/lH8faEcsZK1IjyK0hRd8eKo9pTtdmk/H5CbRgys4gjAWjzj7KQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
+        html {
+            position: relative;
+        }
         .portrait{
             width: 100%;
             max-width: 400px;
@@ -27,14 +30,33 @@
         .halffoot{
             height: 50%;
         }
+        .footer::before{
+            content: "";
+            position: absolute;
+            background-image: url();
+            background-size: cover;
+            z-index: -5;
+            opacity: 0.7;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+        .carousel-item img {
+            height: 400px;
+        }
+        .carouselpic{
+            filter: brightness(0.75)
+        }
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top header">
-        <a class="navbar-brand col-1 ms-3" href="#">Valgykla</a>
-        <button class="navbar-toggler" type="button" id="navbarDropdown" data-bs-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <nav class="navbar navbar-expand-lg bg-light fixed-top header">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Valgykla</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
-        </button>
+          </button>
         <div class="collapse navbar-collapse col-11 row" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto col-9">
                 <li class="nav-item dropdown">
@@ -42,9 +64,9 @@
                             Home
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Šventinės vakarienės</a></li>
-                            <li><a class="dropdown-item" href="#">Šefai</a></li>
-                            <li><a class="dropdown-item" href="#">Karjera</a></li>
+                            <li><a class="dropdown-item" href="#sventinesvak">Šventinės vakarienės</a></li>
+                            <li><a class="dropdown-item" href="#mususefai">Šefai</a></li>
+                            <li><a class="dropdown-item" href="#paidslavery">Karjera</a></li>
                             <li><div class="dropdown-divider"></div></li>
                             <li><a class="dropdown-item" href="#">Kontaktai</a></li>
                         </ul>
@@ -58,7 +80,7 @@
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0 col-3">
-                <div class="d-flex justify-content-left">
+                <div class="d-flex justify-content-left flex-column flex-md-row">
                     <input class="form-control mr-sm-2 w-50" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn my-2 my-sm-0 bg-secondary text-white w-25" type="submit">Search</button>
                 </div>
@@ -177,7 +199,161 @@
             </div>
         </div>
       </div>
-      <footer class="footer1 mt-5">
+
+      <div class="container carousel" style="margin-top: 70px;">
+        <div class="col-md-12 text-center">
+            <p class="display-6" style="font-weight: bold;" id="sventinesvak">Šventinės vakarienės</p>
+        </div>
+        <div class="row">
+            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="./images/celeb1.jpg" class="d-block w-100 carouselpic" style="object-fit: cover;" alt="festive dinner 1">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./images/celeb2.jpg" class="d-block w-100 carouselpic" style="object-fit: cover;" alt="festive dinner 2">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./images/celeb3.jpg" class="d-block w-100 carouselpic" style="object-fit: cover;" alt="festive dinner 3">
+                    </div>
+                </div>
+                <button class="carousel-control-prev shadow-sm" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next shadow-sm" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-12">
+                <p>This is a long paragraph written to show how the line-height of an element is affected by our utilities. Classes are applied to the element itself or 
+                    sometimes the parent element. These classes can be customized as needed with our utility API.</p>
+            </div>
+            <div class="col-12">
+                <p>This is a long paragraph written to show how the line-height of an element is affected by our utilities. Classes are applied to the element itself or 
+                    sometimes the parent element. These classes can be customized as needed with our utility API.</p>
+            </div>
+            <div class="col-12">
+                <p>This is a long paragraph written to show how the line-height of an element is affected by our utilities. Classes are applied to the element itself or 
+                    sometimes the parent element. These classes can be customized as needed with our utility API.</p>
+            </div>
+            <div class="col-12">
+                <p>This is a long paragraph written to show how the line-height of an element is affected by our utilities. Classes are applied to the element itself or 
+                    sometimes the parent element. These classes can be customized as needed with our utility API.</p>
+            </div>
+            <div class="col-12">
+                <p>This is a long paragraph written to show how the line-height of an element is affected by our utilities. Classes are applied to the element itself or 
+                    sometimes the parent element. These classes can be customized as needed with our utility API.</p>
+            </div>
+            <div class="col-12">
+                <p>This is a long paragraph written to show how the line-height of an element is affected by our utilities. Classes are applied to the element itself or 
+                    sometimes the parent element. These classes can be customized as needed with our utility API.</p>
+            </div>
+            <div class="col-12">
+                <p>This is a long paragraph written to show how the line-height of an element is affected by our utilities. Classes are applied to the element itself or 
+                    sometimes the parent element. These classes can be customized as needed with our utility API.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mb-sm-0 mb-5">
+        <div class="row mt-3">
+            <div class="col-md-12 text-center">
+                <p class="display-6" style="font-weight: bold;" id="mususefai">Mūsų šefai</p>
+            </div>
+            <div class="col-md-4 col-12 mb-md-5 mb-0">
+                <div class="h-75"><img src="images/chef1.jpg" class="img-fluid" style="height: 100%; width: 100%; object-fit: cover;"></div>
+                <p>Ya boy Ramsay</p>
+                <p>angry feller but i hear he's a decent chef. may call you an idiot sandwich. is known to terrorize bad restaurants. taste at your own risk.</p>
+            </div>
+            <div class="col-md-4 col-12 mb-md-5 mb-0">
+                <div class="h-75"><img src="images/chef2.jpg" class="img-fluid" style="height: 100%; width: 100%; object-fit: cover;"></div>
+                <p>Remy</p>
+                <p>fantastic chef and a half decent rat, too. pulls at people's hairs to make them his puppet. don't know how it works, but apparently, it does.</p>
+            </div>
+            <div class="col-md-4 col-12 mb-md-5 mb-0">
+                <div class="h-75"><img src="images/chef3.jpg" class="img-fluid" style="height: 100%; width: 100%; object-fit: cover;"></div>
+                <p>Jerome Nigel McElroy</p>
+                <p>also known as chef. kinda dead, but he can probably whip you up some grub and sing you a potentially offensive song to encourage you.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-5 mt-lg-0">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <p class="display-6" style="font-weight: bold;" id="paidslavery">Tapkite komandos dalimi</p>
+            </div>
+            <div class="col-md-12 mb-3">
+                <p class="job-title border-bottom" data-bs-toggle="collapse" href="#collapseJob1" role="button" aria-expanded="false" aria-controls="collapseJob1">Šefo asistentė/-as</p>
+                <div class="collapse" id="collapseJob1">
+                    <div class="card card-body">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae iusto molestias blanditiis hic magnam temporibus sit repellendus possimus consequatur a ad minus deleniti quidem aliquid doloremque molestiae quam natus, amet ipsa culpa laboriosam! Ut consequuntur quaerat mollitia saepe, recusandae nam.
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 mb-3">
+                <p class="job-title border-bottom" data-bs-toggle="collapse" href="#collapseJob2" role="button" aria-expanded="false" aria-controls="collapseJob2">Administratorė/-ius</p>
+                <div class="collapse" id="collapseJob2">
+                    <div class="card card-body">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae iusto molestias blanditiis hic magnam temporibus sit repellendus possimus consequatur a ad minus deleniti quidem aliquid doloremque molestiae quam natus, amet ipsa culpa laboriosam! Ut consequuntur quaerat mollitia saepe, recusandae nam.
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 mb-3">
+                <p class="job-title border-bottom" data-bs-toggle="collapse" href="#collapseJob3" role="button" aria-expanded="false" aria-controls="collapseJob3">Padavėja/-as</p>
+                <div class="collapse" id="collapseJob3">
+                    <div class="card card-body">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae iusto molestias blanditiis hic magnam temporibus sit repellendus possimus consequatur a ad minus deleniti quidem aliquid doloremque molestiae quam natus, amet ipsa culpa laboriosam! Ut consequuntur quaerat mollitia saepe, recusandae nam.
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <p class="job-title border-bottom" data-bs-toggle="collapse" href="#collapseJob4" role="button" aria-expanded="false" aria-controls="collapseJob1">Ateities darbuotoja/-as</p>
+                <div class="collapse" id="collapseJob4">
+                    <div class="card card-body">
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum laborum tempora quidem nostrum placeat quo, ad fuga illo at unde quod. Unde iusto praesentium earum exercitationem eum voluptatum dicta, officiis facere itaque modi hic perspiciatis vitae in aut non animi.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-5 mt-lg-0">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <p class="display-6" style="font-weight: bold;" id="paidslavery">Susisiekite su mumis</p>
+            </div>
+            <div class="col-12 col-md-4">
+                <img src="./images/restaurant.jpg" style="height: 100%; width: 100%; object-fit: cover;">
+            </div>
+            <div class="col-12 col-md-4">
+                <form>
+                    <div class="form-group">
+                      <label for="InputName2">Name</label>
+                      <input type="name" class="form-control" id="InputName2" aria-describedby="nameHelp">
+                    </div>
+                    <div class="form-group mt-4 mb-mb-0">
+                        <label for="InputEmail2">Email address</label>
+                        <input type="email" class="form-control" id="InputEmail2" aria-describedby="emailHelp">
+                    </div>
+                    <div class="form-group mt-4 mb-md-0">
+                        <label for="exampleFormControlTextarea1">Comments</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Leave a comment here"></textarea>
+                      </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                  </form>
+            </div>
+            <div class="col-12 col-md-4">
+                <iframe style="height: 100%; width: 100%; object-fit: cover;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d426.9672374571097!2d23.920967297050055!3d54.89573816365461!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46e722771f3c7bd9%3A0x6a2fa53b5b00427c!2sTraumatologijos%20Punktas%20Soboras!5e0!3m2!1sen!2slt!4v1712608356809!5m2!1sen!2slt" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </div>
+
+      <footer class="footer mt-5">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 h-50">
@@ -192,9 +368,9 @@
                         <li class="ms-3">LT0000000000000000</li>
                         <li class="ms-3">Lorem ipsum dolor sit amet.</li>
                     </ul>
-                    <i class="fab fa-twitter"></i> <!-- Twitter icon -->
-                    <i class="fab fa-instagram"></i> <!-- Instagram icon -->
-                    <i class="fab fa-facebook"></i> <!-- Facebook icon -->
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-facebook"></i>
                     <p>&copy;All rights reserved</p>
                 </div>
             </div>
